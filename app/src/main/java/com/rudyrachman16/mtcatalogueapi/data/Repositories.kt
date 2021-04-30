@@ -20,7 +20,7 @@ class Repositories private constructor(private val apiDataGet: ApiDataGet) {
             }
     }
 
-    fun testMovies(failed: (error: Throwable) -> Unit): LiveData<ArrayList<MovieList>> {
+    fun getMovies(failed: (error: Throwable) -> Unit): LiveData<ArrayList<MovieList>> {
         val movieList = MutableLiveData<ArrayList<MovieList>>()
         apiDataGet.getMovies(object : ApiCallback<ArrayList<MovieList>> {
             override fun onSuccess(item: ArrayList<MovieList>) {

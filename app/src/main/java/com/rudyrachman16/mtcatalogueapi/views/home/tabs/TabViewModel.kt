@@ -10,7 +10,7 @@ import com.rudyrachman16.mtcatalogueapi.data.api.models.TvShowList
 
 class TabViewModel(private val repositories: Repositories, private val application: Application) :
     ViewModel() {
-    fun getMovies(): LiveData<ArrayList<MovieList>> = repositories.testMovies {
+    fun getMovies(): LiveData<ArrayList<MovieList>> = repositories.getMovies {
         Toast.makeText(application.applicationContext, it.message, Toast.LENGTH_LONG).show()
     }
 
